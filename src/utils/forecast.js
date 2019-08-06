@@ -13,9 +13,11 @@ const forecast = (lat, lon, cb) => {
         undefined,
         `${body.daily.data[0].summary} It is currently ${
           body.currently.temperature
-        }°C degrees out. There is ${
+        }°C degrees out. This high today is ${
+          body.daily.data[0].temperatureHigh
+        }. This low today is ${body.daily.data[0].temperatureLow}. There is ${
           body.currently.precipProbability
-        }% chance of rain `
+        }% chance of rain.`
       );
     }
   });
